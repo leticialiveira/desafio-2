@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-header: #000000;
+  --color-header-blue: #4461f2;
+
+  --color-main-h1: #000000;
+  --color-main-p: #14162e;
+  --color-main-span: #4461f2;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  padding: 45px 45px 0px 45px;
+  border: solid 2px antiquewhite;
+  border-radius: 5%;
+}
+
+header {
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    border: solid 1px red;
+}
+
+header .elements1 ul {
+    display: flex;
+    /* align-items: flex-start; */
+    /* justify-content: start; */
+    gap: 55px;
+    list-style: none;
+}
+
+header .elements1 ul li a {
+    color: var(--color-header);
+  text-decoration: none;
+}
+
+header .elements2 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 50px;
+    color: var(--color-header);
+}
+
+header .elements2 a {
+  color: var(--color-header-blue);
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  border: solid 1px red;
+
+}
+
+.main .left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  border: solid 1px red;
+  gap: 10px;
+  text-align: left;
+}
+
+.left h1 {
+  color: var(--color-main-h1);
+  padding-top: 50px;
+  width: 12vw;
+}
+
+.left p {
+  color: var(--color-main-p);
+  width: 8vw;
+}
+
+.left span {
+  color: var(--color-main-span);
+}
+
+.center img {
+  position: absolute;
+}
+
+.right {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  gap: 20px;
+}
+
+.
