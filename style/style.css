@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Roboto&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -14,8 +13,9 @@
   --color-main-p: #14162e;
   --color-main-span: #4461f2;
 
-  --color-right-button:#4461F2
-  --color-right-input:#EAF0F7
+  --color-right-button:#4461F2;
+  --color-right-input:#EAF0F7;
+  --color-right-response:#D70000;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
   /* display: flex; */
   /* align-items: center; */
   /* justify-content: center; */
-  padding: 30px 45px 0px 45px;
+  padding: 50px 100px 0px 100px;
   background: #FFFFFF;
   border-radius: 50px;
 }
@@ -35,7 +35,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
@@ -52,6 +52,10 @@ header .elements1 ul li a {
   text-decoration: none;
 }
 
+.elements1 ul li:hover {
+  transform: scale(0.9);
+}
+
 header .elements2 {
     display: flex;
     align-items: flex-end;
@@ -60,9 +64,19 @@ header .elements2 {
     color: var(--color-header);
 }
 
+
+header .elements2 select {
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
 header .elements2 a {
   color: var(--color-header-blue);
   text-decoration: none;
+}
+
+.elements2 a:hover {
+  transform: scale(0.9);
 }
 
 .main {
@@ -72,7 +86,7 @@ header .elements2 a {
   width: 100%;
   height: 88vh;
   position: relative;
-
+  font-family: 'Montserrat', sans-serif;
 }
 
 .main .left {
@@ -88,7 +102,7 @@ header .elements2 a {
 .left h1 {
   color: var(--color-main-h1);
   padding-bottom: 50px;
-  width: 27vw;
+  width: 25vw;
   font-weight: 700;
   font-size: 50px;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
@@ -110,10 +124,14 @@ header .elements2 a {
   line-height: 20px;
 }
 
+.left a:hover {
+  border-bottom: 1px solid var(--color-main-span);
+  width: 165px;
+}
 
 .center .img1 img {
   position: absolute;
-  right: 500px;
+  left: 400px;
   bottom: 0px;
 }
 
@@ -138,12 +156,21 @@ header .elements2 a {
   padding-left: 20px;
 }
 
+.right .response {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  font-style:italic ;
+  color: var(--color-right-response);
+}
+
+
 .right a {
   text-decoration: none;
   color: #C7C7C7;
   font-weight: 400;
   font-size: 14px;
-
+  
 }
 
 .right button {
@@ -197,6 +224,17 @@ header .elements2 a {
   background: #FFFFFF;
   box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.13);
   border-radius: 10px;
+  position: relative;
+}
+
+.icon1 img {
+  position: absolute;
+  right: 40px;
+  bottom: 14px;
+}
+
+.icon1:hover {
+  transform: scale(0.9);
 }
 
 .right .icons .icon2 {
@@ -214,6 +252,10 @@ header .elements2 a {
   bottom: 14px;
 }
 
+.icon2:hover {
+  transform: scale(0.9);
+}
+
 .right .icons .icon3 {
   width: 110.91px;
   height: 58.92px;
@@ -227,4 +269,8 @@ header .elements2 a {
   position: absolute;
   right: 40px;
   bottom: 10px;
+}
+
+.icon3:hover {
+  transform: scale(0.9);
 }

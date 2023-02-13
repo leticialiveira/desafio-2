@@ -5,17 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
+    <script src="./teste.json"></script>
     <title>Document</title>
   </head>
   <body>
     <header>
       <div class="elements1">
         <ul>
-          <li><a href="#"><p>Home</p></a></li>
-          <li><a href="#"><p>About</p></a></li>
-          <li><a href="#"><p>Blog</p></a></li>
-          <li><a href="#"><p>Pages</p></a></li>
-          <li><a href="#"><p>Contact</p></a></li>
+          <li>
+            <a href="#"><p>Home</p></a>
+          </li>
+          <li>
+            <a href="#"><p>About</p></a>
+          </li>
+          <li>
+            <a href="#"><p>Blog</p></a>
+          </li>
+          <li>
+            <a href="#"><p>Pages</p></a>
+          </li>
+          <li>
+            <a href="#"><p>Contact</p></a>
+          </li>
         </ul>
       </div>
 
@@ -49,13 +60,17 @@
 
       <div class="right">
         <input type="email" id="email" placeholder="Enter Email" />
-        <input type="password" id="password" placeholder="••••••••"/>
+        <input type="password" id="password" placeholder="••••••••" />
+
+        <div class="response">
+          <p id="resultBody"></p>
+        </div>
 
         <a href="#"><p>Recover password ?</p></a>
 
         <button id="submitButton">Sign</button>
 
-        <div class="right-center"> 
+        <div class="right-center">
           <div class="space-line"></div>
           <span> Or continue</span>
           <div class="space-line2"></div>
@@ -63,7 +78,7 @@
 
         <div class="icons">
           <div class="icon1">
-            <img src="" alt="" />
+            <img src="./assets/simb google.png" alt="" />
           </div>
 
           <div class="icon2">
@@ -77,4 +92,41 @@
       </div>
     </div>
   </body>
+  <script>
+    const emailBody = document.getElementById("email");
+    const passwordBody = document.getElementById("password");
+    const submitButtonBody = document.getElementById("submitButton");
+
+    submitButton.addEventListener("click", function () {
+      fetch("./teste.json")
+        .then((response) => response.json())
+        .then((json) => {
+          const completeFile = json;
+
+          var emailError = false
+          var passwordError = false
+          for (let i = 0; i < completeFile.length; i++) {
+             if(completeFile[i].email === emailBody.value){
+              emailError = true
+             }
+            if(completeFile[i].password === passwordBody.value){
+              passwordError = true
+            } 
+
+          }
+          if (emailError) {
+            if (passwordError) {
+              return (document.getElementById("resultBody").innerHTML =
+                "Acesso liberado!");
+            } else {
+              return (document.getElementById("resultBody").innerHTML =
+                "Senha errada!");
+            }
+          } else {
+            return (document.getElementById("resultBody").innerHTML =
+              "Por favor insira um endereço de e-mail válido!");
+        }
+      });
+    });
+  </script>
 </html>
