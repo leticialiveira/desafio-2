@@ -12,24 +12,13 @@
     <header>
       <div class="elements1">
         <ul>
-          <li>
-            <a href="#"><p>Home</p></a>
-          </li>
-          <li>
-            <a href="#"><p>About</p></a>
-          </li>
-          <li>
-            <a href="#"><p>Blog</p></a>
-          </li>
-          <li>
-            <a href="#"><p>Pages</p></a>
-          </li>
-          <li>
-            <a href="#"><p>Contact</p></a>
-          </li>
+          <li><a href="#home"><p>Home</p></a></li>
+          <li><a href="#about"><p>About</p></a></li>
+          <li><a href="#blog"><p>Blog</p></a></li>
+          <li><a href="#pages"><p>Pages</p></a></li>
+          <li><a href="#contact"><p>Contact</p></a></li>
         </ul>
       </div>
-
       <div class="elements2">
         <select id="language" name="Idioma">
           <option value="English">English</option>
@@ -37,36 +26,34 @@
           <option value="Spanish">Spanish</option>
         </select>
 
-        <a href="#"><p>Sign in</p></a>
+        <a href="#sign-in"><p>Sign in</p></a>
 
-        <a href="#"><p>Register</p></a>
+        <a href="#register"><p>Register</p></a>
       </div>
     </header>
 
     <div class="main">
       <div class="left">
         <h1>Sign In to Recharge Direct</h1>
-
         <p>if you don’t have an account you can</p>
-
-        <a href="#"><span>Register here! </span></a>
+        <a href="#register-here"><span>Register here! </span></a>
       </div>
 
       <div class="center">
-        <div class="img1">
-          <img src="./assets/img homem.png" alt="Homem feliz" />
-        </div>
+        <div class="img1"><img src="./assets/img homem.png" alt="Homem feliz" /></div>
       </div>
 
       <div class="right">
         <input type="email" id="email" placeholder="Enter Email" />
         <input type="password" id="password" placeholder="••••••••" />
 
+        <div class="recover-password">
+          <a href="#recover-password"><p>Recover password ?</p></a>
+        </div>
+        
         <div class="response">
           <p id="resultBody"></p>
         </div>
-
-        <a href="#"><p>Recover password ?</p></a>
 
         <button id="submitButton">Sign</button>
 
@@ -77,17 +64,9 @@
         </div>
 
         <div class="icons">
-          <div class="icon1">
-            <img src="./assets/simb google.png" alt="" />
-          </div>
-
-          <div class="icon2">
-            <img src="./assets/simb apple.png" alt="" />
-          </div>
-
-          <div class="icon3">
-            <img src="./assets/simb face.png" alt="" />
-          </div>
+          <div class="icon1"><a href="#google"><img src="./assets/simb google.png" alt="icon google" /></a></div>
+          <div class="icon2"><a href="#apple"><img src="./assets/simb apple.png" alt="icon apple" /></a></div>
+          <div class="icon3"><a href="#facebook"><img src="./assets/simb face.png" alt="icon facebook" /></a></div>
         </div>
       </div>
     </div>
@@ -96,6 +75,8 @@
     const emailBody = document.getElementById("email");
     const passwordBody = document.getElementById("password");
     const submitButtonBody = document.getElementById("submitButton");
+    var emailError = false
+    var passwordError = false
 
     submitButton.addEventListener("click", function () {
       fetch("./teste.json")
@@ -103,28 +84,36 @@
         .then((json) => {
           const completeFile = json;
 
-          var emailError = false
-          var passwordError = false
           for (let i = 0; i < completeFile.length; i++) {
+
              if(completeFile[i].email === emailBody.value){
               emailError = true
              }
-            if(completeFile[i].password === passwordBody.value){
+
+             if(completeFile[i].password === passwordBody.value){
               passwordError = true
             } 
-
           }
           if (emailError) {
             if (passwordError) {
-              return (document.getElementById("resultBody").innerHTML =
-                "Acesso liberado!");
+              return  (document.getElementById("resultBody").style.color = "rgb(24, 120, 0 )",
+                        document.getElementById("resultBody").innerHTML =
+                        "Acesso liberado!",
+                        setTimeout(function(){
+                          window.open( "./Valorant/central.html") 
+                        },1000)
+                        )
+
             } else {
-              return (document.getElementById("resultBody").innerHTML =
-                "Senha errada!");
+              return  (document.getElementById("resultBody").style.color = "rgb(187, 0, 0 )",
+                        document.getElementById("resultBody").innerHTML =
+                        "Senha errada!")
+
             }
           } else {
-            return (document.getElementById("resultBody").innerHTML =
-              "Por favor insira um endereço de e-mail válido!");
+            return (document.getElementById("resultBody").style.color = "rgb(187, 0, 0 )",
+                    document.getElementById("resultBody").innerHTML =
+                    "Por favor insira um endereço de e-mail válido!");
         }
       });
     });

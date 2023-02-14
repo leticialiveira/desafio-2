@@ -15,15 +15,11 @@
 
   --color-right-button:#4461F2;
   --color-right-input:#EAF0F7;
-  --color-right-response:#D70000;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
   padding: 50px 100px 0px 100px;
   background: #FFFFFF;
   border-radius: 50px;
@@ -52,7 +48,7 @@ header .elements1 ul li a {
   text-decoration: none;
 }
 
-.elements1 ul li:hover {
+header .elements1 ul li:hover {
   transform: scale(0.9);
 }
 
@@ -75,7 +71,7 @@ header .elements2 a {
   text-decoration: none;
 }
 
-.elements2 a:hover {
+header .elements2 a:hover {
   transform: scale(0.9);
 }
 
@@ -99,7 +95,7 @@ header .elements2 a {
   text-align: left;
 }
 
-.left h1 {
+.main .left h1 {
   color: var(--color-main-h1);
   padding-bottom: 50px;
   width: 25vw;
@@ -108,14 +104,14 @@ header .elements2 a {
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
-.left p {
+.main .left p {
   color: var(--color-main-p);
   width: 15vw;
   font-weight: 400;
   font-size: 23px;
 }
 
-.left a {
+.main .left a {
   color: var(--color-main-span);
   text-decoration: none;
   align-items: start;
@@ -124,27 +120,33 @@ header .elements2 a {
   line-height: 20px;
 }
 
-.left a:hover {
+.main .left a:hover {
   border-bottom: 1px solid var(--color-main-span);
   width: 165px;
 }
 
-.center .img1 img {
-  position: absolute;
-  left: 400px;
-  bottom: 0px;
+.main .center {
+  position: relative;
+  width: auto;
+  height: auto;
 }
 
-.right {
+.main .center .img1 img {
+  position: absolute;
+  right: 50px;
+  top: -60px;
+}
+
+ .main .right {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   width: auto;
   height: auto;
   gap: 20px;
 }
 
-.right input {
+.main .right input {
   width: 397.15px;
   height: 61.38px;
   border-radius: 10px;
@@ -156,24 +158,28 @@ header .elements2 a {
   padding-left: 20px;
 }
 
-.right .response {
+.main .right .recover-password {
+  justify-content: flex-end;
+  align-items: end;
   display: flex;
-  align-items: center;
-  justify-content: center;  
-  font-style:italic ;
-  color: var(--color-right-response);
+  height: 10px;
 }
 
-
-.right a {
+.main .right .recover-password a  {
   text-decoration: none;
   color: #C7C7C7;
   font-weight: 400;
   font-size: 14px;
-  
 }
 
-.right button {
+.main .right .response {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  font-style:italic ;
+}
+
+.main .right button {
   width: 397.15px;
   height: 61.38px;
   border-radius: 10px;
@@ -181,23 +187,23 @@ header .elements2 a {
   color: #FFFFFF;
   font-weight: 400;
   font-size: 19px;
-  /* box-shadow: 0px 12px 21px 4px rgba(68, 97, 242, 0.15); */
+  box-shadow: 0px 12px 21px 4px rgba(68, 97, 242, 0.15);
 }
 
-.right-center {
+.main  .right .right-center {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
 
-.right-center .space-line {
+.main .right .right-center .space-line {
     width: 119.15px;
     height: 0px;
     border: 1px solid #DFDFDF;
 }
 
-.right-center span {
+.main .right .right-center span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,19 +212,19 @@ header .elements2 a {
   font-size: 14px;
 }
 
-.right-center .space-line2 {
+.main .right .right-center .space-line2 {
   width: 119.15px;
   height: 0px;
   border: 1px solid #DFDFDF;
 }
 
-.right .icons {
+.main .right .icons {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.right .icons .icon1 {
+.main .right .icons .icon1 {
   width: 110.91px;
   height: 58.92px;
   background: #FFFFFF;
@@ -227,17 +233,17 @@ header .elements2 a {
   position: relative;
 }
 
-.icon1 img {
+.main .icons .icon1 img {
   position: absolute;
   right: 40px;
   bottom: 14px;
 }
 
-.icon1:hover {
+.main .icons .icon1:hover {
   transform: scale(0.9);
 }
 
-.right .icons .icon2 {
+.main .right .icons .icon2 {
   width: 110.91px;
   height: 58.92px;
   background: #FFFFFF;
@@ -246,17 +252,17 @@ header .elements2 a {
   position: relative;
 }
 
-.icon2 img {
+.main .icons .icon2 img {
   position: absolute;
   right: 40px;
   bottom: 14px;
 }
 
-.icon2:hover {
+.main .icons .icon2:hover {
   transform: scale(0.9);
 }
 
-.right .icons .icon3 {
+.main .right .icons .icon3 {
   width: 110.91px;
   height: 58.92px;
   background: #FFFFFF;
@@ -265,12 +271,12 @@ header .elements2 a {
   position: relative;
 }
 
-.icon3 img {
+.main .icons .icon3 img {
   position: absolute;
   right: 40px;
   bottom: 10px;
 }
 
-.icon3:hover {
+.main .icons .icon3:hover {
   transform: scale(0.9);
 }
