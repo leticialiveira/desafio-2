@@ -77,6 +77,11 @@
     const submitButtonBody = document.getElementById("submitButton");
     var emailError = false
     var passwordError = false
+    // const check = window.localStorage.getItem('token');
+    //   if(check){
+    //     window.location.assign("./Valorant/central.html")
+    //   }
+
 
     submitButton.addEventListener("click", function () {
       fetch("./teste.json")
@@ -98,22 +103,23 @@
             if (passwordError) {
               return  (document.getElementById("resultBody").style.color = "rgb(24, 120, 0 )",
                         document.getElementById("resultBody").innerHTML =
-                        "Acesso liberado!",
+                        "Free access!",
+                        window.localStorage.setItem('token', 'aaaaa'),
                         setTimeout(function(){
-                          window.open( "./Valorant/central.html") 
+                          window.location.replace( "./Valorant/central.html") 
                         },1000)
                         )
 
             } else {
               return  (document.getElementById("resultBody").style.color = "rgb(187, 0, 0 )",
                         document.getElementById("resultBody").innerHTML =
-                        "Senha errada!")
+                        "Wrong password!")
 
             }
           } else {
             return (document.getElementById("resultBody").style.color = "rgb(187, 0, 0 )",
                     document.getElementById("resultBody").innerHTML =
-                    "Por favor insira um endereço de e-mail válido!");
+                    "Please enter a valid email address!");
         }
       });
     });
