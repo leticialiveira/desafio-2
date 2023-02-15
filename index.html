@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
     <script src="./teste.json"></script>
-    <title>Document</title>
+    <title>Desafio 2</title>
   </head>
   <body>
     <header>
@@ -81,8 +81,6 @@
     //   if(check){
     //     window.location.assign("./Valorant/central.html")
     //   }
-
-
     submitButton.addEventListener("click", function () {
       fetch("./teste.json")
         .then((response) => response.json())
@@ -107,8 +105,7 @@
                         window.localStorage.setItem('token', 'aaaaa'),
                         setTimeout(function(){
                           window.location.replace( "./Valorant/central.html") 
-                        },1000)
-                        )
+                        },1000))
 
             } else {
               return  (document.getElementById("resultBody").style.color = "rgb(187, 0, 0 )",
